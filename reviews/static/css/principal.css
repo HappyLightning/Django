@@ -1,0 +1,165 @@
+body {
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+header {
+    padding-bottom: 85px;
+}
+
+p {
+    font-family: 'Andale Mono', monospace;
+    margin-left: 2px;
+}
+
+.menu {
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    height: 65px;
+    background-color: black;
+}
+
+.menu img {
+    margin: 10px 20px;
+    width: auto;
+    height: 30px;
+}
+
+.menu input {
+    float:right;
+    margin: 20px 40px;
+    padding: 4px;
+    width: 200px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 3px;
+    color: white;
+    text-align: center;
+}
+
+.menu input:focus {
+    background-color: black;
+}
+
+.jogo {
+    margin: 0 50px;
+    margin-bottom: 70px;
+    padding: 10px 30px;
+    padding-bottom: 75px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 20px;
+    border-width: 1px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    overflow: hidden
+}
+
+body .jogo {
+    background-color: #1C1C1C;
+}
+
+.titulo {
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.titulo-ouro {
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 10px 0;
+    background: linear-gradient(90deg, rgba(186,148,62,1) 0%, rgba(236,172,32,1) 20%, rgba(186,148,62,1) 39%, rgba(249,244,180,1) 50%, rgba(186,148,62,1) 60%, rgba(236,172,32,1) 80%, rgba(186,148,62,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 1.7s infinite;
+    background-size: 200%;
+    background-position: right;
+}
+
+@keyframes shine {
+  to{background-position: left}
+
+}
+
+.cover {
+    float: left;
+    margin-right: 17px;
+    width: 150px;
+    height: 200px;
+    border-radius: 8px;
+    transition: transform .5s;
+}
+
+.cover:hover {
+    transform: scale(1.1);
+}
+
+.selo {
+    width: 40px;
+    float: right;
+}
+
+.nota {
+    float: right;
+    margin: 0;
+    padding: 0 8.5px;
+    color: white;
+    font-family: 'Andale Mono', monospace;
+    font-size: 32px;
+    border-radius: 4px;
+    -webkit-text-stroke: 0.7px black;
+}
+
+.nota-ouro {
+    float: right;
+    margin: 0;
+    padding: 0 8.5px;
+    color: white;
+    font-family: 'Andale Mono', monospace;
+    font-size: 32px;
+    border-radius: 4px;
+    -webkit-text-stroke: 0.7px black;
+    background: linear-gradient(90deg, rgba(186,148,62,1) 0%, rgba(236,172,32,1) 20%, rgba(186,148,62,1) 39%, rgba(249,244,180,1) 50%, rgba(186,148,62,1) 60%, rgba(236,172,32,1) 80%, rgba(186,148,62,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 1.7s infinite;
+    background-size: 200%;
+    background-position: right;
+}
+
+.generos {
+    overflow: visible
+    display: inline-block;
+    margin: 50px 0px;
+    padding: 0 10px;
+    float: left;
+}
+
+.genero {
+    display:inherit;
+}
+
+.genero p {
+}
+
+.imagens-in-game {
+    display:inline-block;
+}
+
+.img-in-game {
+    display:inherit;
+    margin: 10px 10px;
+}
+
+.img-in-game img {
+    width: auto;
+    height: 120px;
+    border: 1px solid white;
+    border-radius: 6px;
+    transition: transform .5s;
+}
+
+.img-in-game:hover {
+    transform: scale(1.2);
+}

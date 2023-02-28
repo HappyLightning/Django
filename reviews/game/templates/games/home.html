@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static "css/principal.css" %}">
+    <link rel="icon" href="{% static "logo/logo.png" %}" type="image/icon type" width="30px" height="30px">
+</head>
+<body>
+    <header>
+        <navbar class="menu">
+            <img src="{% static "logo/logo.png" %}">
+            <input type="text" placeholder="Pesquisar pelo seu jogo favorito">
+        </navbar>
+    </header>
+    {% for jogo in jogos %}
+        <div class="jogo">
+            {% if jogo.selo_de_qualidade %}
+                <img src="{% static "/selos/selo_qualidade.png" %}" class="selo">
+            {% endif %}
+            {% if jogo.selo_de_qualidade %}
+                <!--Lógica para mudar a cor da nota-->
+                {% if jogo.nota >= 70 %}
+                    <h3 class="nota-ouro" style="background-color:#6c3;">{{ jogo.nota }}</h3>
+                {% endif %}
+                {% if jogo.nota <= 70 and jogo.nota >= 40 %}
+                    <h3 class="nota-ouro" style="background-color:#fc3;">{{ jogo.nota }}</h3>
+                {% endif %}
+                {% if jogo.nota < 40 %}
+                    <h3 class="nota-ouro" style="background-color:#f00;">{{ jogo.nota }}</h3>
+            {% endif %}
+            {% else %}
+                <!--Lógica para mudar a cor da nota-->
+                {% if jogo.nota >= 70 %}
+                    <h3 class="nota" style="background-color:#6c3;">{{ jogo.nota }}</h3>
+                {% endif %}
+                {% if jogo.nota <= 70 and jogo.nota >= 40 %}
+                    <h3 class="nota" style="background-color:#fc3;">{{ jogo.nota }}</h3>
+                {% endif %}
+                {% if jogo.nota < 40 %}
+                    <h3 class="nota" style="background-color:#f00;">{{ jogo.nota }}</h3>
+                {% endif %}
+            {% endif %}
+
+            <!--Adiciona animação dourada no título do jogo-->
+            {% if jogo.selo_de_qualidade %}
+                <h2 class="titulo-ouro">{{ jogo.titulo }}</h2>
+            {% else %}
+                <h2 class="titulo">{{ jogo.titulo }}</h2>
+            {% endif %}
+            <img src="{{ jogo.imagem.url }}" class="cover">
+            <p class="estudio"><strong>Estúdio: </strong>{{ jogo.desenvolvedor }}
+            <strong>Data lançamento: </strong> {{ jogo.data_lançamento|date }} </p>
+            <p>{{ jogo.descrição }}</p>
+
+            <!--Iteração Python para cada genero de um jogo-->
+            {% for genero in jogo.genero.all %}
+                <ul class="generos">
+                    <li class="genero"><p>{{ genero }}</p></li>
+                </ul>
+            {% endfor %}
+            <br>
+            <ul class="imagens-in-game">
+                <li class="img-in-game"><img src="{{ jogo.imagem_in_game1.url }}"></li>
+                <li class="img-in-game"><img src="{{ jogo.imagem_in_game2.url }}"></li>
+                <li class="img-in-game"><img src="{{ jogo.imagem_in_game3.url }}"></li>
+            </ul>
+        </div>
+    {% endfor %}
+</body>
+</html>
